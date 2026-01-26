@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Siwan College of Engineering & Management</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+    body { background: #f4f6fb; color: #333; }
+
+    header {
+      background: #0a2540;
+      color: #fff;
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 { font-size: 20px; }
+
+    nav a {
+      color: #fff;
+      margin-left: 18px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a:hover { text-decoration: underline; }
+
+    /* Login dropdown (click-based) */
+    .login-dropdown {
+      display: inline-block;
+      position: relative;
+      margin-left: 18px;
+    }
+
+    .login-btn {
+      color: #fff;
+      font-weight: 500;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .login-menu {
+      display: none;
+      position: absolute;
+      top: 30px;
+      right: 0;
+      background: #ffffff;
+      min-width: 170px;
+      border-radius: 6px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      z-index: 2000;
+    }
+
+    .login-menu a {
+      display: block;
+      padding: 10px 14px;
+      color: #0a2540;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .login-menu a:hover {
+      background: #f4f6fb;
+    }
+
+    .login-menu.show {
+      display: block;
+    }
+
+    section { padding: 70px 40px; }
+
+    .hero {
+      background: linear-gradient(rgba(10,37,64,0.85), rgba(10,37,64,0.85)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+      padding: 130px 40px;
+    }
+
+    .hero h2 { font-size: 38px; margin-bottom: 12px; }
+    .hero p { font-size: 18px; margin-bottom: 25px; }
+
+    .btn {
+      background: #ffb703;
+      border: none;
+      padding: 12px 22px;
+      font-size: 15px;
+      cursor: pointer;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    .btn:hover { background: #ffa200; }
+
+    h2 { margin-bottom: 20px; }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background: #fff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    footer {
+      background: #0a2540;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+
+    /* Login Box */
+    .login-box input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+    }
+
+    /* Chatbot */
+    .chatbot {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 300px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      display: none;
+      flex-direction: column;
+    }
+
+    .chat-header {
+      background: #0a2540;
+      color: white;
+      padding: 10px;
+      border-radius: 10px 10px 0 0;
+    }
+
+    .chat-body { padding: 10px; font-size: 14px; height: 200px; overflow-y: auto; }
+    .chat-input { display: flex; }
+    .chat-input input { flex: 1; padding: 8px; border: none; border-top: 1px solid #ccc; }
+    .chat-input button { border: none; padding: 8px 12px; background: #ffb703; cursor: pointer; }
+
+    .chat-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #ffb703;
+      padding: 14px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Siwan College of Engineering & Management</h1>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#courses">Courses</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#notice">Notice</a>
+
+    <div class="login-dropdown">
+      <span class="login-btn">Login ▾</span>
+      <div class="login-menu">
+        <a href="student_login.html">Student Login</a>
+        <a href="faculty_login.html">Faculty Login</a>
+      </div>
+    </div>
+
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero" id="home">
+  <h2>Shaping Future Engineers</h2>
+  <p>Approved by AICTE | Affiliated to Bihar Engineering University</p>
+  <button class="btn">Apply Now</button>
+</section>
+
+<section id="about">
+  <h2>About Us</h2>
+  <p>Siwan College of Engineering & Management is dedicated to academic excellence, innovation, and industry-oriented learning.</p>
+</section>
+
+<section id="courses">
+  <h2>Our Courses</h2>
+  <div class="cards">
+    <div class="card">Computer Science & Engineering</div>
+    <div class="card">Mechanical Engineering</div>
+    <div class="card">Electrical Engineering</div>
+    <div class="card">Civil Engineering</div>
+  </div>
+</section>
+
+<section id="gallery">
+  <h2>Campus Gallery</h2>
+  <div class="cards gallery">
+    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b">
+    <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f">
+    <img src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b">
+  </div>
+</section>
+
+<section id="notice">
+  <h2>Notice Board</h2>
+  <ul>
+    <li>📢 Semester Exam starts from 10 Feb 2026</li>
+    <li>📢 New admission open for 2026 batch</li>
+    <li>📢 SIH internal hackathon registration</li>
+  </ul>
+</section>
+
+
+
+<section id="contact">
+  <h2>Contact Us</h2>
+  <p>Email: info@scem.ac.in</p>
+  <p>Phone: +91 8409085424</p>
+</section>
+
+<footer>
+  <p>© 2026 Siwan College of Engineering & Management</p>
+</footer>
+
+<!-- Chatbot Button -->
+<div class="chat-btn" onclick="toggleChat()">💬</div>
+
+<!-- Chatbot -->
+<div class="chatbot" id="chatbot">
+  <div class="chat-header">SCEM Bot</div>
+  <div class="chat-body" id="chatBody">Hello! How can I help you?</div>
+  <div class="chat-input">
+    <input type="text" id="chatInput" placeholder="Type here...">
+    <button onclick="sendMsg()">Send</button>
+  </div>
+</div>
+
+<script>
+  function toggleChat() {
+    const bot = document.getElementById('chatbot');
+    bot.style.display = bot.style.display === 'flex' ? 'none' : 'flex';
+  }
+
+  function sendMsg() {
+    const input = document.getElementById('chatInput');
+    const body = document.getElementById('chatBody');
+    if (input.value.trim() !== '') {
+      body.innerHTML += '<br><b>You:</b> ' + input.value;
+      body.innerHTML += '<br><b>Bot:</b> Please contact college office for more details.';
+      input.value = '';
+      body.scrollTop = body.scrollHeight;
+    }
+  }
+
+  // Login dropdown click toggle
+  const loginBtn = document.querySelector('.login-btn');
+  const loginMenu = document.querySelector('.login-menu');
+
+  loginBtn.addEventListener('click', () => {
+    loginMenu.classList.toggle('show');
+  });
+
+  // Close dropdown when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.login-dropdown')) {
+      loginMenu.classList.remove('show');
+    }
+  });
+</script>
+
+</body>
+</html>
