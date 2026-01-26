@@ -151,6 +151,41 @@
       transform: scale(1.15);
     }
 
+    .upload-section {
+      margin: 30px 0;
+      padding: 20px;
+      background: #f9f9f9;
+      border-radius: 8px;
+      border: 2px dashed #ffb703;
+      text-align: center;
+    }
+
+    .upload-input {
+      display: none;
+    }
+
+    .upload-btn {
+      background: #ffb703;
+      border: none;
+      padding: 12px 24px;
+      font-size: 15px;
+      cursor: pointer;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .upload-btn:hover {
+      background: #ffa200;
+      transform: scale(1.05);
+    }
+
+    .upload-info {
+      margin-top: 10px;
+      font-size: 13px;
+      color: #666;
+    }
+
     footer {
       background: #0a2540;
       color: #fff;
@@ -248,7 +283,14 @@
 
 <section id="gallery">
   <h2>Campus Gallery</h2>
-  <div class="cards gallery">
+  
+  <div class="upload-section">
+    <input type="file" id="imageInput" class="upload-input" accept="image/*" multiple>
+    <button class="upload-btn" onclick="document.getElementById('imageInput').click()">📤 Upload Images</button>
+    <div class="upload-info">Click to upload JPG, PNG, or GIF files</div>
+  </div>
+
+  <div class="cards gallery" id="galleryContainer">
     <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b">
     <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f">
     <img src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b">
@@ -319,6 +361,31 @@
     if (!e.target.closest('.login-dropdown')) {
       loginMenu.classList.remove('show');
     }
+  });
+
+  // Image upload functionality
+  const imageInput = document.getElementById('imageInput');
+  const galleryContainer = document.getElementById('galleryContainer');
+
+  imageInput.addEventListener('change', (e) => {
+    const files = Array.from(e.target.files);
+    
+    files.forEach((file, index) => {
+      const reader = new FileReader();
+      
+      reader.onload = (event) => {
+        const img = document.createElement('img');
+        img.src = event.target.result;
+        img.style.animation = `slideUp 0.6s ease-out forwards`;
+        img.style.animationDelay = (index * 0.1) + 's';
+        galleryContainer.appendChild(img);
+      };
+      
+      reader.readAsDataURL(file);
+    });
+    
+    // Reset input
+    imageInput.value = '';
   });
 </script>
 
