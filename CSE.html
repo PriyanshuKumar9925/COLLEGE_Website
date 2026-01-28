@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Computer Science & Engineering | SCEM</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+    body { background: #f4f6fb; color: #333; }
+
+    header {
+      background: #0a2540;
+      color: #fff;
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 { font-size: 20px; }
+
+    nav a {
+      color: #fff;
+      margin-left: 18px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a:hover { text-decoration: underline; }
+
+    section { padding: 60px 40px; }
+
+    .hero {
+      background: linear-gradient(rgba(10,37,64,0.85), rgba(10,37,64,0.85)), url('https://images.unsplash.com/photo-1518770660439-4636190af475');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+      padding: 120px 40px;
+    }
+
+    .hero h2 { font-size: 36px; margin-bottom: 10px; }
+    .hero p { font-size: 18px; }
+
+    h2 { margin-bottom: 20px; color: #0a2540; }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 25px;
+      margin-top: 25px;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    }
+
+    footer {
+      background: #0a2540;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>SCEM</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="#about">About Dept</a>
+    <a href="#faculty">Faculty</a>
+    <a href="#labs">Labs</a>
+    <a href="#curriculum">Curriculum</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h2>Computer Science & Engineering</h2>
+  <p>Innovating the Future with Technology</p>
+</section>
+
+<section id="about">
+  <h2>About the Department</h2>
+  <p>The Department of Computer Science & Engineering at Siwan College of Engineering & Management focuses on quality education, research, and industry-oriented learning in computing technologies.</p>
+</section>
+
+<section id="faculty">
+  <h2>Faculty Members</h2>
+  <div class="cards">
+    <div class="card">Mr. Mahfooz Ahmad<br><small>HOD, CSE</small></div>
+    <div class="card">Mr. MD Saifuddin<br><small>Assistant Professor</small></div>
+    <div class="card">Mr. Ahmar Javed Khan<br><small>Assistant Professor</small></div>
+    <div class="card">Ms. Amisha Kumari<br><small>Assistant Professor</small></div>
+  </div>
+</section>
+
+<section id="labs">
+  <h2>Laboratories</h2>
+  <div class="cards">
+    <div class="card">Programming Lab</div>
+    <div class="card">Data Structures Lab</div>
+    <div class="card">AI & ML Lab</div>
+    <div class="card">Database Management Lab</div>
+  </div>
+</section>
+
+<section id="curriculum">
+  <h2>Curriculum Highlights</h2>
+  <ul>
+    <li>Data Structures & Algorithms</li>
+    <li>Operating Systems</li>
+    <li>Database Management Systems</li>
+    <li>Artificial Intelligence & Machine Learning</li>
+    <li>Web Development & Cloud Computing</li>
+  </ul>
+</section>
+
+<section id="contact">
+  <h2>Department Contact</h2>
+  <p>Email: cse@scem.ac.in</p>
+  <p>Phone: +91 8409085424</p>
+</section>
+
+<footer>
+  <p>© 2026 Siwan College of Engineering & Management | CSE Department</p>
+</footer>
+
+</body>
+</html>
