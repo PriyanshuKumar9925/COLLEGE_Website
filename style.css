@@ -3,6 +3,8 @@
 
     header {
       background: #0a2540;
+      background-image: none
+      ;
       color: #fff;
       padding: 15px 40px;
       display: flex;
