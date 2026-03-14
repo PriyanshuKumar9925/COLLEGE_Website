@@ -5,7 +5,9 @@ const cors = require("cors");
 const app = express();
 app.use(cors());
 app.use(express.json());
-
+app.get("/", (req, res) => {
+  res.send("College Backend Server Running Successfully 🚀");
+});
 /* ---------- STUDENT DATABASE ---------- */
 
 const studentDB = mysql.createConnection({
