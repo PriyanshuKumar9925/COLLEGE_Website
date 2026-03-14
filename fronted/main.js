@@ -1,3 +1,4 @@
+fetch('https://college-websit.onrender.com')
 // Chatbot toggle and message handling
   function toggleChat() {
     const bot = document.getElementById('chatbot');
